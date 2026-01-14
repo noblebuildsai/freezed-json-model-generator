@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flutter JSON Model Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Flutter JSON Model Generator</h1>
+
+  <div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="panel left">
+
+      <!-- OPTIONS -->
+      <div class="options">
+        <label class="option">
+          <input type="checkbox" id="useFreezed" checked />
+          Use Freezed
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="useJsonKey" checked />
+          JsonKey
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="useCamelCase" checked />
+          Camel Case
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="useNullSafe" checked />
+          Null Safe
+        </label>
+
+        <label class="option">
+          <input type="checkbox" id="includeJsonComment" checked />
+          Include original JSON as comment
+        </label>
+      </div>
+
+      <label>Root Class Name</label>
+      <input id="rootClass" placeholder="LoginModel" />
+
+      <label>Paste API Response JSON</label>
+      <textarea
+        id="jsonInput"
+        rows="18"
+        placeholder="Paste API response here"
+      ></textarea>
+
+      <div class="actions">
+        <button class="btn primary" onclick="generate()">Generate</button>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="panel right">
+      <div class="output-header">
+        <div class="output-title">Output</div>
+        <div class="output-actions">
+          <button class="btn" onclick="copyCode()">Copy</button>
+        </div>
+      </div>
+      <p id="copyStatus" class="status"></p>
+      <pre id="output" class="code-output"></pre>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
