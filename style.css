@@ -14,6 +14,27 @@ body {
   font-weight: 650;
   letter-spacing: 0.2px;
 }
+
+/* Repository button */
+.repo-link {
+  margin: 8px 0 18px 0;
+}
+
+.repo-btn {
+  display: inline-block;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: transparent;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.repo-btn:hover {
+  background: #f8fafc;
+}
   
   /* LAYOUT */
   .container {
