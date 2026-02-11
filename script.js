@@ -39,6 +39,29 @@ part '${toSnake(rootClass)}.g.dart';
     header + "\n" + classes.reverse().join("\n\n");
 }
 
+function copyCode() {
+  const output = document.getElementById("output");
+  const copyStatus = document.getElementById("copyStatus");
+  const text = output.textContent;
+
+  if (!text) {
+    copyStatus.textContent = "Nothing to copy";
+    copyStatus.style.color = "#e74c3c";
+    return;
+  }
+
+  navigator.clipboard.writeText(text).then(() => {
+    copyStatus.textContent = "Copied to clipboard";
+    copyStatus.style.color = "#27ae60";
+    setTimeout(() => {
+      copyStatus.textContent = "";
+    }, 2000);
+  }).catch(() => {
+    copyStatus.textContent = "Failed to copy";
+    copyStatus.style.color = "#e74c3c";
+  });
+}
+
 // ---------------- CORE BUILDER ----------------
 
 function buildClass(name, obj, classes, config) {
